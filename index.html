@@ -87,5 +87,30 @@
             <button class="add-book"><img src="./icons/plus.svg" alt="plus"></button>
         </div>
     </div>
+    <!-- testing popup form -->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <form class="new-book-form" action="">
+                <div class="book-author-form">
+                    <!-- <label for="book-author">Author</label> -->
+                    <input type="text" name="author" id="book-author" placeholder="Book's author">
+                </div>
+                <div class="book-title-form">
+                    <!-- <label for="book-title">Title</label> -->
+                    <input type="text" name="title" id="book-title" placeholder="Book's title">
+                </div>
+                <div class="pages-status-form">
+                    <label for="pages-number">Pages</label>
+                    <input type="number" name="pages" id="pages-number">
+                    <label for="status">Already read?</label>
+                    <input type="checkbox" name="read" id="status">
+                </div>
+                <!-- <div class="status-form">
+                </div>            -->
+                 <button class="submit-btn">Add a book</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
