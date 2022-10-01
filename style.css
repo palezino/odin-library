@@ -59,8 +59,35 @@ body {
 
 .pages {
     display: flex;
+    /* gap: 5px; */
+    justify-content: space-between;
+}
+
+.pages-text {
+    display: flex;
+    align-content: flex-end;
     gap: 5px;
-    justify-content: end;
+}
+
+img[alt='tick'] {
+
+}
+
+.read {
+    height: 30px;
+    width: 100px;
+    margin-left: -16px;
+    padding-right: 5px;
+    /* background-image: linear-gradient(to left,  #66C3D1, #66c3d197); */
+    text-align: end;
+    border-radius: 0 7px 7px 0;
+
+    /* display: flex;
+    gap: 5px; */
+}
+
+.read::after {
+    /* content: 'Read'; */
 }
 
 button {
