@@ -39,11 +39,15 @@ document.querySelector('.submit-btn').addEventListener('click', () => {
     console.log(myLibrary[0]);
 });
 
-let bookCard = document.querySelector('.book-card').cloneNode(true);
-console.log(bookCard.childNodes[7].childNodes[3].childNodes[1].innerText)
+// let bookCard = document.querySelector('.book-card').cloneNode(true);
+// console.log(bookCard.childNodes[7].childNodes[3].childNodes[1].innerText)
+
 
 let booksContainer = document.querySelector('.books-container');
 
+// let bookCard = document.querySelector('.book-card');
+
+// console.log(bookCard)
 
 function createNewCard() {
     let bookCard = document.querySelector('.book-card').cloneNode(true);
@@ -54,3 +58,6 @@ function createNewCard() {
     booksContainer.insertBefore(bookCard, addBookBtn);
 }
 
+document.querySelectorAll('.delete-book').forEach(btn => btn.addEventListener('click', (e) => {
+    e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
+}));
