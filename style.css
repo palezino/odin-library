@@ -53,6 +53,7 @@ body {
     align-items: stretch;
     justify-content: stretch;
     padding: 8px;
+    height: 180px;
     text-align: center;
     font-weight: 700;
 }
@@ -83,6 +84,7 @@ body {
     
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .pages {
