@@ -14,37 +14,37 @@
         <div class="books-container">
             <div class="book-card">
                 <button class="delete-book"><img src="./icons/x.svg" alt="delete"></button>
+                <div class="author"></div>
+                <div class="title"></div>
+                <div class="pages">
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
+                    <div class="pages-text">Pages:<div class="num-pages"></div></div> 
+                </div>
+            </div>
+            <div class="book-card">
+                <button class="delete-book"><img src="./icons/x.svg" alt="delete"></button>
                 <div class="author">Douglas Adams Peter Coldberg Junior</div>
                 <div class="title">The Hitchhiker's Guide to the Galaxy</div>
                 <div class="pages">
-                    <div class="read"></div> 
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
                     <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
                 </div>
             </div>
             <div class="book-card">
                 <button class="delete-book"><img src="./icons/x.svg" alt="delete"></button>
-                <div class="author">Douglas Adamssss</div>
+                <div class="author">Douglas Adamssssss</div>
                 <div class="title">The Hitchhiker's Guide to the Galaxy</div>
                 <div class="pages">
-                    <div class="read"></div> 
-                    <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
-                </div>
-            </div>
-            <div class="book-card">
-                <button class="delete-book"><img src="./icons/x.svg" alt="delete"></button>
-                <div class="author">Douglas Adams</div>
-                <div class="title">The Hitchhiker's Guide to the Galaxy</div>
-                <div class="pages">
-                    <div class="read"></div> 
-                    <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
-                </div>
-            </div>
-            <div class="book-card">
-                <button class="delete-book"><img src="./icons/x.svg" alt="delete"></button>
-                <div class="author">Douglas Adams</div>
-                <div class="title">The Hitchhiker's Guide to the Galaxy</div>
-                <div class="pages">
-                    <div class="read"></div> 
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
                     <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
                 </div>
             </div>
@@ -53,7 +53,10 @@
                 <div class="author">Douglas Adams</div>
                 <div class="title">The Hitchhiker's Guide to the Galaxy</div>
                 <div class="pages">
-                    <div class="read"></div> 
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
                     <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
                 </div>
             </div>
@@ -62,7 +65,10 @@
                 <div class="author">Douglas Adams</div>
                 <div class="title">The Hitchhiker's Guide to the Galaxy</div>
                 <div class="pages">
-                    <div class="read"></div> 
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
                     <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
                 </div>
             </div>
@@ -71,7 +77,10 @@
                 <div class="author">Douglas Adams</div>
                 <div class="title">The Hitchhiker's Guide to the Galaxy</div>
                 <div class="pages">
-                    <div class="read"></div> 
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
                     <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
                 </div>
             </div>
@@ -80,7 +89,22 @@
                 <div class="author">Douglas Adams</div>
                 <div class="title">The Hitchhiker's Guide to the Galaxy</div>
                 <div class="pages">
-                    <div class="read"></div> 
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
+                    <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
+                </div>
+            </div>
+            <div class="book-card">
+                <button class="delete-book"><img src="./icons/x.svg" alt="delete"></button>
+                <div class="author">Douglas Adams</div>
+                <div class="title">The Hitchhiker's Guide to the Galaxy</div>
+                <div class="pages">
+                    <div class="read">
+                        <label for="read-status">Read</label>
+                        <input type="checkbox" name="read" class="read-status">
+                    </div> 
                     <div class="pages-text">Pages:<div class="num-pages">400</div></div> 
                 </div>
             </div>
@@ -95,17 +119,17 @@
                 <div class="new-book-header">Let's add a new book!</div>
                 <div class="book-author-form">
                     <!-- <label for="book-author">Author</label> -->
-                    <input type="text" name="author" id="book-author" placeholder="Book's author">
+                    <input type="text" name="author" class="popup-form" placeholder="Book's author">
                 </div>
                 <div class="book-title-form">
                     <!-- <label for="book-title">Title</label> -->
-                    <input type="text" name="title" id="book-title" placeholder="Book's title">
+                    <input type="text" name="title" class="popup-form" placeholder="Book's title">
                 </div>
                 <div class="pages-status-form">
                     <label for="pages-number">Pages</label>
-                    <input type="number" name="pages" id="pages-number">
+                    <input type="number" name="pages" class="popup-form">
                     <label for="status">Already read?</label>
-                    <input type="checkbox" name="read" id="status">
+                    <input type="checkbox" name="read" class="popup-form">
                 </div>
                  <button class="submit-btn">Add a book</button>
             </div>

@@ -27,7 +27,7 @@ function Book(author, title, pages, read) {
 // console.log(newBook[2].value);
 
 function addBookToLibrary() {
-    let newBook = document.querySelectorAll('input')
+    let newBook = document.querySelectorAll('.popup-form');
     let userInput = new Book(newBook[0].value, newBook[1].value, newBook[2].value, newBook[3].checked);
     myLibrary.push(userInput);
 }
@@ -47,15 +47,22 @@ let booksContainer = document.querySelector('.books-container');
 
 // let bookCard = document.querySelector('.book-card');
 
-// console.log(bookCard)
+// console.log(bookCard.childNodes[3].innerText)
 
 function createNewCard() {
     let bookCard = document.querySelector('.book-card').cloneNode(true);
     bookCard.childNodes[3].innerText = myLibrary[0]['author'];
     bookCard.childNodes[5].innerText = myLibrary[0]['title'];
     bookCard.childNodes[7].childNodes[3].childNodes[1].innerText = myLibrary[0]['pages'];
+    
 
     booksContainer.insertBefore(bookCard, addBookBtn);
+
+    console.log(myLibrary)
+
+    document.querySelectorAll('.delete-book').forEach(btn => btn.addEventListener('click', (e) => {
+        e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
+    }));
 }
 
 document.querySelectorAll('.delete-book').forEach(btn => btn.addEventListener('click', (e) => {
