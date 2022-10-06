@@ -10,7 +10,7 @@ closeFormBtn.addEventListener('click', function() {
     document.querySelector('.bg-modal').style.display = 'none';
 })
 
-//
+//add a book to the library array
 let myLibrary = [];
 
 function Book(author, title, pages, read) {
@@ -51,11 +51,10 @@ let booksContainer = document.querySelector('.books-container');
 
 function createNewCard() {
     let bookCard = document.querySelector('.book-card').cloneNode(true);
-    bookCard.childNodes[3].innerText = myLibrary[0]['author'];
-    bookCard.childNodes[5].innerText = myLibrary[0]['title'];
-    bookCard.childNodes[7].childNodes[3].childNodes[1].innerText = myLibrary[0]['pages'];
+    bookCard.childNodes[3].innerText = myLibrary[myLibrary.length - 1]['author'];
+    bookCard.childNodes[5].innerText = myLibrary[myLibrary.length - 1]['title'];
+    bookCard.childNodes[7].childNodes[3].childNodes[1].innerText = myLibrary[myLibrary.length - 1]['pages'];
     
-
     booksContainer.insertBefore(bookCard, addBookBtn);
 
     console.log(myLibrary)
