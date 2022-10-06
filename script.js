@@ -17,14 +17,8 @@ function Book(author, title, pages, read) {
     this.author = author,
     this.title = title,
     this.pages = pages,
-    this.read = read,
-    this.info = function () {
-        return `${title} by ${author}, ${pages} pages, ${read}`;
-    }
+    this.read = read
 }
-
-// let newBook = document.querySelectorAll('input');
-// console.log(newBook[2].value);
 
 function addBookToLibrary() {
     let newBook = document.querySelectorAll('.popup-form');
@@ -39,15 +33,8 @@ document.querySelector('.submit-btn').addEventListener('click', () => {
     console.log(myLibrary[0]);
 });
 
-// let bookCard = document.querySelector('.book-card').cloneNode(true);
-// console.log(bookCard.childNodes[7].childNodes[3].childNodes[1].innerText)
-
-
+// creat a new card
 let booksContainer = document.querySelector('.books-container');
-
-// let bookCard = document.querySelector('.book-card');
-
-// console.log(bookCard.childNodes[7].childNodes[1].childNodes[3].checked)
 
 function createNewCard() {
     let bookCard = document.querySelector('.book-card').cloneNode(true);
@@ -66,6 +53,7 @@ function createNewCard() {
     }));
 }
 
+// function to delete existing cards
 document.querySelectorAll('.delete-book').forEach(btn => btn.addEventListener('click', (e) => {
     e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
 }));
