@@ -45,9 +45,9 @@ document.querySelector('.submit-btn').addEventListener('click', () => {
 
 let booksContainer = document.querySelector('.books-container');
 
-let bookCard = document.querySelector('.book-card');
+// let bookCard = document.querySelector('.book-card');
 
-console.log(bookCard.childNodes[7].childNodes[1].childNodes[3].checked)
+// console.log(bookCard.childNodes[7].childNodes[1].childNodes[3].checked)
 
 function createNewCard() {
     let bookCard = document.querySelector('.book-card').cloneNode(true);
