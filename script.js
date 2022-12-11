@@ -11,26 +11,51 @@ closeFormBtn.addEventListener('click', function() {
 })
 
 //add a book to the library array
-let myLibrary = [];
+// let myLibrary = [];
 
-function Book(author, title, pages, read) {
-    this.author = author,
-    this.title = title,
-    this.pages = pages,
-    this.read = read
+// function Book(author, title, pages, read) {
+//     this.author = author,
+//     this.title = title,
+//     this.pages = pages,
+//     this.read = read
+// }
+
+// function addBookToLibrary() {
+//     let newBook = document.querySelectorAll('.popup-form');
+//     let userInput = new Book(newBook[0].value, newBook[1].value, newBook[2].value, newBook[3].checked);
+//     myLibrary.push(userInput);
+// }
+
+
+
+// library made with classes
+class Library {
+    constructor(author, title, pages, read) {
+        this.author = author,
+        this.title = title,
+        this.pages = pages,
+        this.read = read
+    }
+
+    static myLibrary = [];
+
+    static addBookToLibrary() {
+        let newBook = document.querySelectorAll('.popup-form');
+        let userInput = new Library(newBook[0].value, newBook[1].value, newBook[2].value, newBook[3].checked);
+        Library.myLibrary.push(userInput);
+    }
 }
 
-function addBookToLibrary() {
-    let newBook = document.querySelectorAll('.popup-form');
-    let userInput = new Book(newBook[0].value, newBook[1].value, newBook[2].value, newBook[3].checked);
-    myLibrary.push(userInput);
-}
+
+
+
+
 
 document.querySelector('.submit-btn').addEventListener('click', () => {
-    addBookToLibrary();
+    Library.addBookToLibrary();
     document.querySelector('.bg-modal').style.display = 'none';
     createNewCard();
-    console.log(myLibrary[0]);
+    // console.log(myLibrary);
 });
 
 // creat a new card
@@ -38,15 +63,15 @@ let booksContainer = document.querySelector('.books-container');
 
 function createNewCard() {
     let bookCard = document.querySelector('.book-card').cloneNode(true);
-    bookCard.childNodes[3].innerText = myLibrary[myLibrary.length - 1]['author'];
-    bookCard.childNodes[5].innerText = myLibrary[myLibrary.length - 1]['title'];
-    bookCard.childNodes[7].childNodes[3].childNodes[1].innerText = myLibrary[myLibrary.length - 1]['pages'];
-    bookCard.childNodes[7].childNodes[1].childNodes[3].checked = myLibrary[myLibrary.length - 1]['read'];
+    bookCard.childNodes[3].innerText = Library.myLibrary[Library.myLibrary.length - 1]['author'];
+    bookCard.childNodes[5].innerText = Library.myLibrary[Library.myLibrary.length - 1]['title'];
+    bookCard.childNodes[7].childNodes[3].childNodes[1].innerText = Library.myLibrary[Library.myLibrary.length - 1]['pages'];
+    bookCard.childNodes[7].childNodes[1].childNodes[3].checked = Library.myLibrary[Library.myLibrary.length - 1]['read'];
 
     
     booksContainer.insertBefore(bookCard, addBookBtn);
 
-    console.log(myLibrary)
+    // console.log(myLibrary)
 
     document.querySelectorAll('.delete-book').forEach(btn => btn.addEventListener('click', (e) => {
         e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
@@ -57,3 +82,4 @@ function createNewCard() {
 document.querySelectorAll('.delete-book').forEach(btn => btn.addEventListener('click', (e) => {
     e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
 }));
+
