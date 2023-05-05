@@ -93,22 +93,24 @@
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close">+</div>
-            <div class="new-book-form" action="./script.js">
+            <form class="new-book-form">
+            <!-- <div class="new-book-form" action="./script.js"> -->
                 <div class="new-book-header">Let's add a new book!</div>
                 <div class="book-author-form">
-                    <input type="text" name="author" class="popup-form" placeholder="Book's author">
+                    <input type="text" name="author" id="author" class="popup-form" placeholder="Book's author" required>
                 </div>
                 <div class="book-title-form">
-                    <input type="text" name="title" class="popup-form" placeholder="Book's title">
+                    <input type="text" name="title" id="title" class="popup-form" placeholder="Book's title" required>
                 </div>
                 <div class="pages-status-form">
                     <label for="pages-number">Pages</label>
-                    <input type="number" name="pages" class="popup-form">
+                    <input type="number" name="pages" id="pages" class="popup-form" min="1" required>
                     <label for="status">Already read?</label>
                     <input type="checkbox" name="read" class="popup-form">
                 </div>
-                 <button class="submit-btn">Add a book</button>
-            </div>
+                <button class="submit-btn">Add a book</button>
+            <!-- </div> -->
+            </form>
         </div>
     </div>
 </body>

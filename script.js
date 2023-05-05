@@ -28,13 +28,39 @@ const library = (() => {
     closeFormBtn.addEventListener('click', function() {
         document.querySelector('.bg-modal').style.display = 'none';
     })
-    
-    // add a book to library
-    document.querySelector('.submit-btn').addEventListener('click', () => {
-        Book.addBookToLibrary();
+
+    // validate the user's input
+    const bookAuthor = document.querySelector('#author');
+    const bookTitle = document.querySelector('#title');
+    const bookPages = document.querySelector('#pages');
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.addEventListener('click', (e) => {
+        // add a book to library
+        if (!(bookAuthor.validity.valueMissing) && !(bookTitle.validity.valueMissing) && !(bookPages.validity.valueMissing)) {
+           Book.addBookToLibrary();
            document.querySelector('.bg-modal').style.display = 'none';
            createNewCard();
-       });
+        } else {
+            // validate the author
+            if (bookAuthor.validity.valueMissing) {
+                bookAuthor.setCustomValidity('The book is missing the author!');
+            } else {
+                bookAuthor.setCustomValidity('');
+            }
+            // validate the title
+            if (bookTitle.validity.valueMissing) {
+                bookTitle.setCustomValidity('Every book needs a title!');
+            } else {
+                bookTitle.setCustomValidity('');
+            }
+            // validate the pages
+            if (bookPages.validity.valueMissing) {
+                bookPages.setCustomValidity(`There's at least one page in the book!`);
+            } else {
+                bookPages.setCustomValidity('');
+            }
+        }
+    })
     
     // creat a new card
     let booksContainer = document.querySelector('.books-container');
