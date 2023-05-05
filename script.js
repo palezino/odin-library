@@ -20,6 +20,12 @@ const library = (() => {
     // open a new book form
     let addBookBtn = document.querySelector('.add-book');
     addBookBtn.addEventListener('click', function() {
+        // empty the input fields
+        document.querySelector('#author').value = '';
+        document.querySelector('#title').value = '';
+        document.querySelector('#pages').value = '';
+        document.querySelector('#read').checked = false;
+        
         document.querySelector('.bg-modal').style.display = 'flex';
     });
 
